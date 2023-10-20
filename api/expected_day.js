@@ -6,12 +6,12 @@ module.exports = async (req, res) => {
 
   const database = client.db("project_hr");
   const result = await database
-    .collection("expected_racing")
+    .collection("expected_racing_summary")
     .distinct("rcDate");
 
   client.close();
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
-  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   res.status(200).send(result);
 };
