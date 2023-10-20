@@ -1,3 +1,6 @@
+import { MongoClient } from "mongodb";
+import "dotenv/config";
+
 module.exports = async (req, res) => {
   const client = new MongoClient(process.env.MONGO_URL);
 
@@ -10,5 +13,5 @@ module.exports = async (req, res) => {
   res.status(200).send(result);
   //   return result;
 
-  res.status(200).send("Hello, World!");
+  //   res.status(200).send("Hello, World!");
 };
