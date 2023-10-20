@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   const database = client.db("project_hr");
   const col = database.collection("expected_racing");
 
-  const result = await col.find({});
+  const result = await col.find({}).toArray();
 
   client.close();
   res.setHeader("Access-Control-Allow-Origin", "*");
