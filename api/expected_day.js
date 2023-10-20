@@ -12,8 +12,8 @@ module.exports = async (req, res) => {
       {
         $group: {
           _id: {
-            rcDate: "$rcDate",
-            rcDay: "$rcDay",
+            date: "$rcDate",
+            day: "$rcDay",
           },
         },
       },
