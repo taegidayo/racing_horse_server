@@ -10,5 +10,8 @@ module.exports = async (req, res) => {
     .distinct("rcDate");
 
   client.close();
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.status(200).send(result);
 };
