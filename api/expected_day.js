@@ -12,8 +12,8 @@ module.exports = async (req, res) => {
       {
         $group: {
           _id: {
-            date: "$rcDate",
-            day: "$rcDay",
+            rcDate: "$rcDate",
+            rcDay: "$rcDay",
           },
         },
       },
@@ -22,8 +22,8 @@ module.exports = async (req, res) => {
 
   // 결과에서 데이터를 추출
   const distinctValues = results.map((item) => ({
-    rcDate: item._id.rcDate,
-    rcDay: item._id.rcDay,
+    date: item._id.rcDate,
+    day: item._id.rcDay,
   }));
 
   client.close();
