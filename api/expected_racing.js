@@ -5,9 +5,9 @@ module.exports = async (req, res) => {
   const client = new MongoClient(process.env.MONGO_URL);
 
   const database = client.db("project_hr");
-  const col = await database.collection("expected_racing");
+  const col = database.collection("expected_racing");
 
-  const result = col.find({});
+  const result = await col.find({});
 
   client.close();
   res.setHeader("Access-Control-Allow-Origin", "*");
