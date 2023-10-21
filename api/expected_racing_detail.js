@@ -22,11 +22,10 @@ module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   // console.log(param.time)
-  console.log(param);
-  console.log(result);
-  if (result) {
-    res.status(200).send(result);
-  } else {
-    res.status(200).send({ dd: "bye" });
-  }
+
+  // if (result) {
+  res.status(200).send(param);
+  // } else {
+  // res.status(200).send({ dd: "bye" });
+  // }
 };
