@@ -9,13 +9,17 @@ module.exports = async (req, res) => {
   const database = client.db("project_hr");
   const col = database.collection("expected_racing_detail");
 
-  // const result = await col.find({
-
-  // }).toArray();
+  const result = await col
+    .find({
+      stTime: param.time,
+      meet: param.meet,
+      rcDate: param.date,
+    })
+    .toArray();
 
   client.close();
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-  res.status(200).send(param);
+  res.status(200).send(result);
 };
