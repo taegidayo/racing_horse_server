@@ -12,7 +12,7 @@ module.exports = async (req, res) => {
   const result = await col
     .find({
       stTime: param.time,
-      // meet: param.meet,
+      meet: param.meet,
       // rcDate: param.date,
     })
     .toArray();
