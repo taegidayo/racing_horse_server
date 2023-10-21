@@ -21,6 +21,9 @@ module.exports = async (req, res) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  // console.log(param.time)
+  console.log(param);
+  console.log(result);
   if (result) {
     res.status(200).send(result);
   } else {
