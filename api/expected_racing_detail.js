@@ -24,7 +24,7 @@ module.exports = async (req, res) => {
   // console.log(param.time)
 
   // if (result) {
-  res.status(200).send({ param: param, result: result });
+  res.status(200).send({ result: result });
   // } else {
   // res.status(200).send({ dd: "bye" });
   // }
