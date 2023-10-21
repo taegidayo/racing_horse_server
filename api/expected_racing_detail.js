@@ -13,7 +13,7 @@ module.exports = async (req, res) => {
     .find({
       stTime: param.time,
       meet: param.meet,
-      rcDate: param.date,
+      rcDate: parseInt(param.date),
     })
     .toArray();
 
