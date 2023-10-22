@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
   const result = await col
     .find({
-      stTime: param.time,
+      rcNo: parseInt(param.rcNo),
       meet: param.meet,
       rcDate: parseInt(param.date),
     })
