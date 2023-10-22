@@ -23,7 +23,7 @@ module.exports = async (req, res) => {
   // 결과에서 데이터를 추출
   const distinctValues = results.map((item) => ({
     date: item._id.rcDate,
-    day: item._id.rcDay,
+    day: item._id.day,
   }));
 
   client.close();
